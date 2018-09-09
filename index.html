@@ -1,0 +1,113 @@
+<html>
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bezier.js"></script>
+    <script src="js/drawing.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="left" class="leftMenu">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                Path Creation
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <form>
+                    Start x: <input id="startx" type="number" value="0"> Start y: <input id="starty" type="number"
+                                                                                         value="165"><br/>
+                    Mid1 x: <input id="mid1x" type="number" value="46"> Mid1 y: <input id="mid1y" type="number"
+                                                                                       value="163"><br/>
+                    Mid2 x: <input id="mid2x" type="number" value="51"> Mid2 y: <input id="mid2y" type="number"
+                                                                                       value="224"><br>
+                    End x: <input id="endx" type="number" value="104"> End y: <input id="endy" type="number"
+                                                                                     value="211">
+                    <br/><br/>
+                    <span id="reverse" class="button is-info is-small">Reverse</span>
+                    <span id="mirror" class="button is-info is-small">Mirror</span>
+                    <br/><br/>
+                    Offset x: <input id="offx" type="number" value="0"> Offset y: <input id="offy" type="number"
+                                                                                         value="0">
+                    <br/><br>
+                    <span id="offset" class="button is-info is-small">Offset</span>
+                    <br/><br/>
+                    Import: <input id="import"> <span id="importtext"
+                                                      class="button is-info is-small"> Import from JSON </span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                Generated Code
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <div class="code-container box">
+                    <span id="java" class="monospace"></span><br/>
+                </div>
+                <a class="button is-info is-medium" onclick="copyToClipboard('#java')">Copy to Clipboard</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                Debug Info
+            </p>
+        </header>
+        <div class="card-content monospace">
+            <div class="content">
+                <span id="xt"></span><br/>
+                <span id="yt"></span><br/>
+                <br/>
+                <span id="dx"></span><br/>
+                <span id="dy"></span><br/>
+                <span id="dydx"></span><br/><br/>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="right" class="rightField">
+    <span id="len">len = </span><br/><br/>
+    <figures>
+        <figure class="quadratic">
+            <script type="text/beziercode">
+
+		            window.draw = function(c) {
+						if (!c) {
+						    c = window.curve;
+						}
+						reset();
+						drawFieldImage(0.5);
+						drawSkeleton(c, {x: 5, y: 50});
+						drawCurve(c, {x: 5, y : 50});
+						if(window.closePoint) {
+							drawPoint(window.closePoint, {x: 5, y : 50});
+							drawText("t = " + Math.round(window.closePoint.t*1000)/1000, {x: 5, y : 50});
+						}
+	            }
+
+
+
+
+            </script>
+        </figure>
+    </figures>
+</div>
+
+<script src="js/interaction.js"></script>
+</body>
+</html>

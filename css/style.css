@@ -1,0 +1,35 @@
+/*.button {*/
+    /*font-size: 0.9em;*/
+    /*background-color: #aaaaff;*/
+    /*border-radius: 5px;*/
+    /*padding: 3px;*/
+/*}*/
+
+input {
+    width: 100px;
+}
+
+.leftMenu {
+    width: 35%;
+    display: inline-block;
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.rightField {
+    width: 50%;
+    display: inline-block;
+    margin-left: 4%;
+}
+
+.code-container {
+    background-color: #dddddd;
+    width: fit-content;
+}
+
+.monospace {
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    font-size: 12px;
+}
+
