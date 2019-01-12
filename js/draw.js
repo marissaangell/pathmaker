@@ -19,7 +19,7 @@ function bindDrawFunctions(idx) {
     var randomIndex = 0;
 
     var fieldImage = new Image();
-    fieldImage.src = "field.png"
+    fieldImage.src = "field_2019.png"
 
 
     return {
